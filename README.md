@@ -18,7 +18,10 @@ The interface was implemented using Jupyter Notebooks and several Python softwar
 
 ## References
 
-- Ikkala, Esko et al. ‘Sampo-UI: A Full Stack JavaScript Framework for Developing Semantic Portal User Interfaces’. 1 Jan. 2022 : 69 – 84.
+- Esko Ikkala, Eero Hyvönen, Heikki Rantala, Mikko Koho: Sampo-UI: A full stack JavaScript framework for developing semantic portal user interfaces. Semantic Web 13(1): 69-84 (2022)
+- Martin Necaský, Stepán Stenchlák: Interactive and iterative visual exploration of knowledge graphs based on shareable and reusable visual configurations. J. Web Semant. 73: 100713 (2022)
+- Federico Desimoni, Laura Po: Empirical evaluation of Linked Data visualization tools. Future Gener. Comput. Syst. 112: 258-282 (2020)
+- Padilla, T., Scates Kettler, H., Varner, S., & Shorish, Y. (2023). Vancouver Statement on Collections as Data. Zenodo. https://doi.org/10.5281/zenodo.8342166
 - Mahendra Mahey, Aisha Al-Abdulla, Sarah Ames, Paula Bray, Gustavo Candela, Caleb Derven, Milena Dobreva-McPherson, Katrine Gasser, Sally Chambers, Stefan Karner, Kristy Kokegei, Ditte Laursen, Abigail Potter, Armin Straube, Sophie-Carolin Wagner, and Lotte Wilms. 2019. Open a GLAM lab. International GLAM Labs Community, Book Sprint, Doha, Qatar. 164 pages. https://doi.org/10.21428/16ac48ec.f54af6ae
 - Gustavo Candela, Nele Gabriëls, Sally Chambers, Milena Dobreva, Sarah Ames, Meghan Ferriter, Neil Fitzgerald, Victor Harbo, Katrine Hofmann, Olga Holownia, Alba Irollo, Mahendra Mahey, Eileen Manchester, Thuy-An Pham, Abigail Potter, and Ellen Van Keer. 2023. A checklist to publish collections as data in GLAM institutions. Global Knowledge, Memory and Communication (Nov. 2023). https://doi.org/10.1108/gkmc-06-2023-0195
 - Gustavo Candela. 2023. An automatic data quality approach to assess semantic data from cultural heritage institutions. J. Assoc. Inf. Sci. Technol. 74, 7 (2023), 866–878. https://doi.org/10.1002/ASI.24761
