@@ -1,10 +1,10 @@
 ## Linked Open Data visualization in CH
 An example of tool based on Jupyter Notebooks to visualize LOD repositories made available by CH institutions. 
 
-## Data modelling
+### Data modelling
 The tool uses a [dataset.ttl](data repository) with metadata about the LOD repositories based on controlled vocabularies such as [https://schema.org/](Schema.org), foaf and Wikidata. 
 
-## LOD repositories used
+### LOD repositories used
 
 The tool has been applied to three LOD repositories:
 
@@ -12,7 +12,7 @@ The tool has been applied to three LOD repositories:
 - National Library of France, https://data.bnf.fr/sparql
 - Getty Vocabularies, https://data.getty.edu/vocab/sparql
 
-## Interface
+### Interface
 
 The interface was implemented using [https://jupyter.org/](Jupyter Notebooks) and several Python software libraries such as [https://ipywidgets.readthedocs.io/](ipywidgets), [https://networkx.org/](networkx), [https://matplotlib.org/](matplotlib), [https://rdflib.readthedocs.io/](rdflib) and [https://sparqlwrapper.readthedocs.io/](SPARQLWrapper).
 
