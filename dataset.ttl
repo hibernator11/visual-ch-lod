@@ -1,0 +1,211 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <https://example.org/> .
+
+
+<https://example.org/dataset/1> a schema:Dataset ;
+    dc:title "data.bnf.fr" ;
+    dc:creator "Bibliothèque nationale de France" ;
+    schema:abstract "Reference information about authors, works and topics" ;
+    schema:author <https://example.org/organization/bnf> ;
+    wdt:P5305 <https://data.bnf.fr/sparql> ;
+    wdt:P127 <https://example.org/organization/bnf> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-1> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-2> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-3> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-4> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-5> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-6> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-7> ;
+    dcterms:hasPart <https://example.org/searchAction/bnf-8> ;
+    schema:description wd:Q104628834 .
+
+<https://example.org/searchAction/bnf-1> a schema:SearchAction ;
+    schema:query "PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX bio: <http://vocab.org/bio/0.1/> SELECT ?author ?day ?date1 ?date2 ?name WHERE {{ ?author foaf:birthday ?day . ?author bio:birth ?date1 . ?author bio:death ?date2 . OPTIONAL {{?author foaf:name ?name}}}} ORDER BY (?day) LIMIT {0}" ;
+    schema:description "Retrieve list of authors" ;
+    schema:result "Name and identifiers of the authors" ;
+    schema:alternateName "authorList" .
+
+<https://example.org/searchAction/bnf-2> a schema:SearchAction ;
+    schema:query "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX rdac: <http://rdaregistry.info/Elements/c/#> SELECT ?s ?label WHERE {{ {{?s a rdac:C10001 . ?s dcterms:creator <{0}>. ?s rdfs:label ?label}} UNION {{?s ?p <{0}>. ?s a rdac:C10007 . ?s dcterms:title ?label }}}}" ;
+    schema:description "Retrieve list of works of an author" ;
+    schema:result "Title and identifiers of the works" ;
+    schema:alternateName "worksFromAuthorList" .
+
+<https://example.org/searchAction/bnf-3> a schema:SearchAction ;
+    schema:query "SELECT ?p ?o WHERE {{ <{0}> ?p ?o }}" ;
+    schema:description "Retrieve metadata about an author" ;
+    schema:result "All the properties that define an author" ;
+    schema:alternateName "authorInfo" .
+
+<https://example.org/searchAction/bnf-4> a schema:SearchAction ;
+    schema:query "SELECT DISTINCT ?p WHERE {{ ?s ?p ?o .}} ORDER BY ?p LIMIT {0}" ;
+    schema:description "Retrieve all the properties used in the dataset" ;
+    schema:result "All the properties used in the dataset" ;
+    schema:alternateName "properties" .
+
+<https://example.org/searchAction/bnf-5> a schema:SearchAction ;
+    schema:query "SELECT DISTINCT ?class WHERE {{ ?s a ?class .}} ORDER BY ?class LIMIT {0}" ;
+    schema:description "Retrieve all the classes used in the dataset" ;
+    schema:result "All the classes used in the dataset" ;
+    schema:alternateName "classes" .
+
+<https://example.org/searchAction/bnf-6> a schema:SearchAction ;
+    schema:query "CONSTRUCT {{ <{0}> a ?authorType . ?s ?p <{0}> . ?s a ?stype .}} WHERE {{ {{<{0}> a ?authorType .}} UNION {{?s ?p <{0}> . ?s a ?stype . }} }}" ;
+    schema:description "Retrieve the author graph" ;
+    schema:result "author graph" ;
+    schema:alternateName "graph" .
+
+<https://example.org/searchAction/bnf-7> a schema:SearchAction ;
+    schema:query "#defaultView:Map SELECT DISTINCT ?autor ?autorLabel ?imagen ?coordenadas WHERE { ?autor wdt:P268 ?id . ?autor wdt:P27 ?pais . ?pais wdt:P625 ?coordenadas. OPTIONAL {?autor wdt:P18 ?imagen .} SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } limit 5000" ;
+    schema:description "Retrieve a map from Wikidata with authors" ;
+    schema:result "Map from wikidata" ;
+    schema:alternateName "wikidataMap" .
+
+
+<https://example.org/searchAction/bnf-8> a schema:SearchAction ;
+    schema:query "CONSTRUCT {{ <{0}> ?p ?o . ?s ?p2 <{0}> .}} WHERE {{ {{ <{0}> ?p ?o .}} UNION {{ ?s ?p2 <{0}> . }}}}" ;
+    schema:description "Retrieve the author graph" ;
+    schema:result "author graph" ;
+    schema:alternateName "downloadGraph" .
+
+<https://example.org/organization/bnf> a schema:Organization ;
+    schema:identifier wd:Q193563 ;
+    foaf:name "Bibliothèque nationale de France" ;
+    schema:contactPoint <https://data.bnf.fr/contact> .
+
+<https://example.org/organization/nl> a schema:Organization ;
+    schema:identifier wd:Q1526131 ;
+    foaf:name "National Library of the Netherlands" .
+    
+<https://example.org/dataset/2> a schema:Dataset ;
+    dc:title "data.bibliotheken.nl" ;
+    dc:creator "National Library of the Netherlands" ;
+    schema:abstract "LInked Open Data at the National Library of the Netherlands" ;
+    schema:author <https://example.org/organization/nl> ;
+    wdt:P5305 <http://data.bibliotheken.nl/sparql> ;
+    wdt:P127 <https://example.org/organization/nl> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-1> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-2> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-3> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-4> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-5> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-6> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-7> ;
+    dcterms:hasPart <https://example.org/searchAction/nl-8> ;
+    schema:description wd:Q105488572 .
+
+
+<https://example.org/searchAction/nl-1> a schema:SearchAction ;
+    schema:query "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT DISTINCT ?author ?name WHERE {{?author a schema:Person . ?author rdfs:label ?name}} LIMIT {0}" ;
+    schema:description "Retrieve list of authors" ;
+    schema:result "Name and identifiers of the authors" ;
+    schema:alternateName "authorList" .
+
+<https://example.org/searchAction/nl-2> a schema:SearchAction ;
+    schema:query "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?s ?label WHERE {{?s a <http://schema.org/CreativeWork> . ?s schema:author <{0}>. ?s rdfs:label ?label }}" ;
+    schema:description "Retrieve list of works of an author" ;
+    schema:result "Title and identifiers of the works" ;
+    schema:alternateName "worksFromAuthorList" .
+
+<https://example.org/searchAction/nl-3> a schema:SearchAction ;
+    schema:query "SELECT ?p ?o WHERE {{ <{0}> ?p ?o }}" ;
+    schema:description "Retrieve metadata about an author" ;
+    schema:result "All the properties that define an author" ;
+    schema:alternateName "authorInfo" .
+
+<https://example.org/searchAction/nl-4> a schema:SearchAction ;
+    schema:query "PREFIX schema: <http://schema.org/> SELECT DISTINCT ?p WHERE {{ ?s a schema:Person . ?s ?p ?o .}} LIMIT {0}" ;
+    schema:description "Retrieve all the properties used in the dataset" ;
+    schema:result "All the properties used in the dataset" ;
+    schema:alternateName "properties" .
+
+<https://example.org/searchAction/nl-5> a schema:SearchAction ;
+    schema:query "SELECT DISTINCT ?class WHERE {{ ?s a ?class .}} LIMIT {0}" ;
+    schema:description "Retrieve all the classes used in the dataset" ;
+    schema:result "All the classes used in the dataset" ;
+    schema:alternateName "classes" .
+
+<https://example.org/searchAction/nl-6> a schema:SearchAction ;
+    schema:query "CONSTRUCT {{ <{0}> a ?authorType . ?s ?p <{0}> . ?s a ?stype .}} WHERE {{ {{<{0}> a ?authorType .}} UNION {{?s ?p <{0}> . ?s a ?stype . }} }}" ;
+    schema:description "Retrieve the author graph" ;
+    schema:result "author graph" ;
+    schema:alternateName "graph" .
+
+<https://example.org/searchAction/nl-7> a schema:SearchAction ;
+    schema:query "#defaultView:Map SELECT DISTINCT ?autor ?autorLabel ?imagen ?coordenadas WHERE { ?autor wdt:P1006 ?id . ?autor wdt:P27 ?pais . ?pais wdt:P625 ?coordenadas. OPTIONAL {?autor wdt:P18 ?imagen .} SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } limit 5000" ;
+    schema:description "Retrieve a map from Wikidata with authors" ;
+    schema:result "Map from wikidata" ;
+    schema:alternateName "wikidataMap" .
+
+
+<https://example.org/searchAction/nl-8> a schema:SearchAction ;
+    schema:query "CONSTRUCT {{ <{0}> ?p ?o . ?s ?p2 <{0}> .}} WHERE {{ {{ <{0}> ?p ?o .}} UNION {{ ?s ?p2 <{0}> . }}}}" ;
+    schema:description "Retrieve the author graph" ;
+    schema:result "author graph" ;
+    schema:alternateName "downloadGraph" .
+
+
+<https://example.org/dataset/3> a schema:Dataset ;
+    dc:title "The Getty Vocabularies" ;
+    dc:creator "Getty Research Institute" ;
+    schema:abstract "Linked.Art Semantic Representation" ;
+    schema:author <https://example.org/organization/getty> ;
+    wdt:P5305 <https://data.getty.edu/vocab/sparql> ;
+    wdt:P127 <https://example.org/organization/getty> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-1> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-2> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-3> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-4> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-5> ;
+    dcterms:hasPart <https://example.org/searchAction/getty-6> ;
+    schema:description wd:Q5554720 .
+
+<https://example.org/organization/getty> a schema:Organization ;
+    schema:identifier wd:Q11203476 ;
+    foaf:name "Getty Research Institute" .
+
+<https://example.org/searchAction/getty-1> a schema:SearchAction ;
+    schema:query "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX cidoc-crm: <http://www.cidoc-crm.org/cidoc-crm/> SELECT DISTINCT ?author ?name WHERE {{?author a cidoc-crm:E21_Person . ?author rdfs:label ?name}} LIMIT {0}" ;
+    schema:description "Retrieve list of authors" ;
+    schema:result "Name and identifiers of the authors" ;
+    schema:alternateName "authorList" .
+
+<https://example.org/searchAction/getty-2> a schema:SearchAction ;
+    schema:query "SELECT ?p ?o WHERE {{ <{0}> ?p ?o }}" ;
+    schema:description "Retrieve metadata about an author" ;
+    schema:result "All the properties that define an author" ;
+    schema:alternateName "authorInfo" .
+
+<https://example.org/searchAction/getty-3> a schema:SearchAction ;
+    schema:query "PREFIX cidoc-crm: <http://www.cidoc-crm.org/cidoc-crm/> SELECT DISTINCT ?p WHERE {{ ?s a cidoc-crm:E21_Person . ?s ?p ?o .}} LIMIT {0}" ;
+    schema:description "Retrieve all the properties used in the dataset" ;
+    schema:result "All the properties used in the dataset" ;
+    schema:alternateName "properties" .
+
+<https://example.org/searchAction/getty-4> a schema:SearchAction ;
+    schema:query "SELECT DISTINCT ?class WHERE {{ ?s a ?class .}} LIMIT {0}" ;
+    schema:description "Retrieve all the classes used in the dataset" ;
+    schema:result "All the classes used in the dataset" ;
+    schema:alternateName "classes" .
+
+<https://example.org/searchAction/getty-5> a schema:SearchAction ;
+    schema:query "#defaultView:Map SELECT DISTINCT ?autor ?autorLabel ?imagen ?coordenadas WHERE { ?autor wdt:P268 ?id . ?autor wdt:P27 ?pais . ?pais wdt:P625 ?coordenadas. OPTIONAL {?autor wdt:P18 ?imagen .} SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } limit 5000" ;
+    schema:description "Retrieve a map from Wikidata with authors" ;
+    schema:result "Map from wikidata" ;
+    schema:alternateName "wikidataMap" .
+
+<https://example.org/searchAction/getty-6> a schema:SearchAction ;
+    schema:query "SELECT * WHERE {{ <{0}> ?p ?o . }}" ;
+    schema:description "Retrieve the author graph" ;
+    schema:result "author graph" ;
+    schema:alternateName "downloadGraph" .
