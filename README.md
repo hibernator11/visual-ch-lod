@@ -13,8 +13,8 @@ The tool has been applied to three LOD repositories:
 
 The interface was implemented using [https://jupyter.org/](Jupyter Notebooks) and several Python software libraries such as [https://ipywidgets.readthedocs.io/](ipywidgets), [https://networkx.org/](networkx), [https://matplotlib.org/](matplotlib), [https://rdflib.readthedocs.io/](rdflib) and [https://sparqlwrapper.readthedocs.io/](SPARQLWrapper).
 
-<img src="images/bnf-notebook.png">
-<img src="images/classes-bnf.png">
+<img width="50%" src="images/bnf-notebook.png">
+<img width="50%" src="images/classes-bnf.png">
 
 
 ## References
