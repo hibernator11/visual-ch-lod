@@ -24,7 +24,7 @@ The interface provides several views to explore the metadata provided by the LOD
 <img width="50%" src="images/bnf-map.png">
 
 
-## References
+### References
 
 - Esko Ikkala, Eero Hyvönen, Heikki Rantala, Mikko Koho: Sampo-UI: A full stack JavaScript framework for developing semantic portal user interfaces. Semantic Web 13(1): 69-84 (2022)
 - Martin Necaský, Stepán Stenchlák: Interactive and iterative visual exploration of knowledge graphs based on shareable and reusable visual configurations. J. Web Semant. 73: 100713 (2022)
