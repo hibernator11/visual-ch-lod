@@ -13,8 +13,12 @@ The tool has been applied to three LOD repositories:
 
 The interface was implemented using [https://jupyter.org/](Jupyter Notebooks) and several Python software libraries such as [https://ipywidgets.readthedocs.io/](ipywidgets), [https://networkx.org/](networkx), [https://matplotlib.org/](matplotlib), [https://rdflib.readthedocs.io/](rdflib) and [https://sparqlwrapper.readthedocs.io/](SPARQLWrapper).
 
+The interface provides several views to explore the metadata provided by the LOD repositories. In particular, the interface provices a tab widget with several options such as explore the properties and classes. An additional view is provided to browse the metadata using innovative features provided by the Wikidata SPARQL endpoint.
+
 <img width="50%" src="images/bnf-notebook.png">
-<img width="50%" src="images/classes-bnf.png">
+<img width="50%" src="images/bnf-classes.png">
+<img width="50%" src="images/bnf-properties.png">
+<img width="50%" src="images/bnf-map.png">
 
 
 ## References
