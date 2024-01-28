@@ -1,8 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON, XML
 from collections import Counter
 import networkx as nx
-#from rdflib import Graph as RDFGraph
-#from rdflib.extras.external_graph_libs import rdflib_to_networkx_graph
 import json
 from dataset import Dataset
 
