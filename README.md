@@ -27,6 +27,17 @@ The interface provides several views to explore the metadata provided by the LOD
 <img width="50%" src="images/bnf-properties.png">
 <img width="50%" src="images/bnf-map.png">
 
+### Installation guide
+The code can be run on cloud services such as [Binder]{https://mybinder.org/} without the need to install additional software and using only the web browser by clicking on the link provided at the beginning of this documentation.
+
+The code can be also installed in a computer by following these steps:
+- download the code from GitHub
+- open the folder with the code
+- run the command: pip install -r requirements.txt
+- open Jupyter (or Anaconda)
+- open the notebooks provided corresponding to the three LOD repositories used in this work: visual-lod-bnf.ipynb, visual-lod-getty.ipynb, visual-lod-nl.ipynb
+\end{itemize}}
+
 
 ### References
 
