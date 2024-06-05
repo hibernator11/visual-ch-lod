@@ -36,7 +36,6 @@ The code can be also installed in a computer by following these steps:
 - run the command: pip install -r requirements.txt
 - open Jupyter (or Anaconda)
 - open the notebooks provided corresponding to the three LOD repositories used in this work: visual-lod-bnf.ipynb, visual-lod-getty.ipynb, visual-lod-nl.ipynb
-\end{itemize}}
 
 
 ### References
