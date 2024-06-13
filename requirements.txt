@@ -7,3 +7,4 @@ numpy==1.26.2
 ipywidgets==8.0.4
 matplotlib==3.8.0
 SPARQLWrapper==2.0.0
+ipyspin==1.0.1
