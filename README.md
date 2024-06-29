@@ -4,7 +4,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12200173.svg)](https://doi.org/10.5281/zenodo.12200173)
 
 ## Linked Open Data visualization in CH
-An example of tool based on Jupyter Notebooks to visualize LOD repositories made available by CH institutions. 
+An example of a tool based on Jupyter Notebooks to visualize LOD repositories made available by CH institutions. 
 
 ### Data modelling
 The tool uses a [dataset.ttl](data repository) with metadata about the LOD repositories based on controlled vocabularies such as [https://schema.org/](Schema.org), foaf and Wikidata. 
