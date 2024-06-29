@@ -1,6 +1,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hibernator11/visual-ch-lod/HEAD)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12200173.svg)](https://doi.org/10.5281/zenodo.12200173)
 
 ## Linked Open Data visualization in CH
 An example of tool based on Jupyter Notebooks to visualize LOD repositories made available by CH institutions. 
