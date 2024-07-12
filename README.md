@@ -7,7 +7,7 @@
 An example of a tool based on Jupyter Notebooks to visualize LOD repositories made available by CH institutions. 
 
 ### Data modelling
-The tool uses a [dataset.ttl](data repository) with metadata about the LOD repositories based on controlled vocabularies such as [https://schema.org/](Schema.org), foaf and Wikidata. 
+The tool uses a [dataset.ttl](data repository) with metadata about the LOD repositories based on controlled vocabularies such as [Schema.org](https://schema.org/), foaf and Wikidata. 
 
 ### LOD repositories used
 
@@ -19,9 +19,9 @@ The tool has been applied to three LOD repositories:
 
 ### Interface
 
-The interface was implemented using [https://jupyter.org/](Jupyter Notebooks) and several Python software libraries such as [https://ipywidgets.readthedocs.io/](ipywidgets), [https://networkx.org/](networkx), [https://matplotlib.org/](matplotlib), [https://rdflib.readthedocs.io/](rdflib) and [https://sparqlwrapper.readthedocs.io/](SPARQLWrapper).
+The interface was implemented using [Jupyter Notebooks](https://jupyter.org/) and several Python software libraries such as [ipywidgets](https://ipywidgets.readthedocs.io/), [networkx](https://networkx.org/), [matplotlib](https://matplotlib.org/), [rdflib](https://rdflib.readthedocs.io/) and [SPARQLWrapper](https://sparqlwrapper.readthedocs.io/).
 
-The interface provides several views to explore the metadata provided by the LOD repositories. In particular, the interface provices a [https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#tag-widgets](tab widget) with several options such as explore the properties and classes. An additional view is provided to browse the metadata using innovative features provided by the Wikidata SPARQL endpoint.
+The interface provides several views to explore the metadata provided by the LOD repositories. In particular, the interface provices a [tab widget](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#tag-widgets) with several options such as explore the properties and classes. An additional view is provided to browse the metadata using innovative features provided by the Wikidata SPARQL endpoint.
 
 <img width="50%" src="images/bnf-notebook.png">
 <img width="50%" src="images/bnf-classes.png">
@@ -29,7 +29,7 @@ The interface provides several views to explore the metadata provided by the LOD
 <img width="50%" src="images/bnf-map.png">
 
 ### Installation guide
-The code can be run on cloud services such as [https://mybinder.org/](Binder) without the need to install additional software and using only the web browser by clicking on the link provided at the beginning of this documentation.
+The code can be run on cloud services such as [Binder](https://mybinder.org/) without the need to install additional software and using only the web browser by clicking on the link provided at the beginning of this documentation.
 
 The code can be also installed in a computer by following these steps:
 - download the code from GitHub
